@@ -32,6 +32,7 @@ dependencies {
         exclude(group = "org.slf4j", module = "slf4j-simple")
     }
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    implementation("io.github.microutils:kotlin-logging:1.12.5")
 }
 
 dependencyManagement {
