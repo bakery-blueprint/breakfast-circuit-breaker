@@ -9,5 +9,5 @@ import org.springframework.web.bind.annotation.PathVariable
 interface UserClient {
 
     @GetMapping("/api/v1/users/{userId}")
-    fun findByUserId(@PathVariable userId: Long) : V1User
+    fun findByUserId(@PathVariable userId: Long): V1User?
 }

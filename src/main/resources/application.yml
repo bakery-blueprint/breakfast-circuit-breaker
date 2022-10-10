@@ -2,3 +2,17 @@ spring:
   redis:
     host: localhost
     port: 6371
+
+
+resilience4j.circuitbreaker:
+  configs:
+    default:
+      failureRateThreshold: 50
+      slowCallRateThreshold: 100
+      slowCallDurationThreshold: 60000
+      permittedNumberOfCallsInHalfOpenState: 4
+      maxWaitDurationInHalfOpenState: 1000
+      slidingWindowType: COUNT_BASED
+      slidingWindowSize: 10
+      minimumNumberOfCalls: 10
+      waitDurationInOpenState: 10000

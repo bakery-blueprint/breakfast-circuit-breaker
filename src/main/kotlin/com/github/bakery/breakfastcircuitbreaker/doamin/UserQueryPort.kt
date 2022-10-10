@@ -1,5 +1,5 @@
 package com.github.bakery.breakfastcircuitbreaker.doamin
 
 interface UserQueryPort {
-    fun findById(userId: UserId): User
+    fun findById(userId: UserId): User?
 }

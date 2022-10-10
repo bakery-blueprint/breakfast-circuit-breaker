@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RestController
 class UserController(private val loadUserService: LoadUserService) {
 
     @GetMapping("/{id}")
-    fun getUser(@PathVariable id: Long): V1User {
-        return loadUserService.loadUser(id).let {
+    fun loadUser(@PathVariable id: Long): V1User? {
+        return loadUserService.loadUser(id)?.let {
             V1User(it.id, it.name)
         }
     }

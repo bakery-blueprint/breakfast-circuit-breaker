@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component
 
 @Component
 class UserExternalAdapter(private val userClient: UserClient) : UserQueryPort {
-    override fun findById(userId: UserId): User {
-        return userClient.findByUserId(userId).let {
+    override fun findById(userId: UserId): User? {
+        return userClient.findByUserId(userId)?.let {
             User(it.id, it.name)
         }
     }
