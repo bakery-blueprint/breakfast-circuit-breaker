@@ -35,7 +35,7 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     implementation("io.github.microutils:kotlin-logging:1.12.5")
     implementation("io.github.resilience4j:resilience4j-all:1.7.1")
-    implementation("io.github.resilience4j:resilience4j-spring-boot2:1.7.1")
+    implementation("io.github.resilience4j:resilience4j-spring-boot2:1.7.0")
 }
 
 dependencyManagement {
