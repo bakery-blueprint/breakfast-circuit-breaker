@@ -4,6 +4,12 @@ spring:
     port: 6371
 
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, circuitbreakers
+
 resilience4j.circuitbreaker:
   configs:
     default:
