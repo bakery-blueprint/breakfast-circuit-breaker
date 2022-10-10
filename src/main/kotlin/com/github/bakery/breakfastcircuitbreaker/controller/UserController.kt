@@ -1,7 +1,7 @@
-package com.github.bakery.hierarchy
+package com.github.bakery.breakfastcircuitbreaker.controller
 
+import com.github.bakery.breakfastcircuitbreaker.doamin.LoadUserService
 import com.github.bakery.common.V1User
-import java.util.*
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RequestMapping
@@ -9,10 +9,12 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("/api/v1/users")
-class UserController {
+class UserController(private val loadUserService: LoadUserService) {
 
     @GetMapping("/{id}")
     fun getUser(@PathVariable id: Long): V1User {
-        return V1User(id, UUID.randomUUID().toString())
+        return loadUserService.loadUser(id).let {
+            V1User(it.id, it.name)
+        }
     }
 }

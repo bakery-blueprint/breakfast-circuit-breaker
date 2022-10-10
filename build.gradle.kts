@@ -28,6 +28,7 @@ dependencies {
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
     implementation("org.springframework.cloud:spring-cloud-starter-sleuth")
+    implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
     runtimeOnly("com.h2database:h2")
     implementation("it.ozimov:embedded-redis:0.7.3") {
         exclude(group = "org.slf4j", module = "slf4j-simple")
